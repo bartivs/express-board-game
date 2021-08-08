@@ -1,0 +1,42 @@
+body {
+  padding: 50px;
+  background-color: #adceff;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.text-input-container {
+  display: flex;
+  width: 20%;
+  margin: 10px 10px 10px 10px;
+  justify-content: space-around ;
+  align-items: center;
+}
+.messages-container{
+  display: flex;
+  width: 99%;
+  flex-direction: row;
+  flex-wrap:wrap;
+}
+
+.message{
+  background-color: navajowhite;
+  text-align: center;
+  width: 200px;
+  margin: 10px 10px 10px 10px;
+}
+
+.bttn{
+  background-color:#f7ffad ;
+  padding: 5px;
+}
+.text{
+  margin: 10px 10px 10px 10px;
+  text-align: start;
+}
+.date{
+  text-align: end;
+  margin: 10px 10px 10px 10px;
+}

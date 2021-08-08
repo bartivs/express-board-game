@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  a(href='/new',class="bttn") New Message 
+  div(class='messages-container')
+    each mess in messages
+      div(class="message")
+        p(class="text")=mess.text
+        p(class="text")=mess.user
+        p(class="date")=mess.added.startOf('hour').fromNow()
+
+
+

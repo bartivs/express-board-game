@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    form(method="POST" action="/new")
+        div(class='text-input-container')
+            label(for='text') Text: 
+            input(type="text", name="text")
+        div(class='text-input-container')
+            label(for='user') User: 
+            input(type="text", name="user")
+        input(type="submit", name="",value="Submit Message")
