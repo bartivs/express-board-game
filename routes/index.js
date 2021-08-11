@@ -1,31 +1,12 @@
 var express = require('express');
-var Moment=require('moment');
+
 var router = express.Router();
+var boardController = require('../controllers/boardController')
 
-
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Moment()
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Moment()
-  }
-];
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { messages: messages });
-});
+router.get('/',boardController.boardMessagesGet);
 /* GET new page. */
-router.get('/new', function(req, res, next) {
-  res.render('new');
-});
-router.post('/new',function(req,res,next){
-    messages.push({text: req.body.text, user: req.body.user, added: new Moment()});
-    res.redirect('/')
-  });
+router.get('/new',boardController.boardMessageNewGet);
+router.post('/new',boardController.boardMessageNewPost);
 module.exports = router;
