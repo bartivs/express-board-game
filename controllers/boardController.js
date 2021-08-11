@@ -26,7 +26,7 @@ exports.boardMessageNewGet= function(req, res, next) {
 
 exports.boardMessageNewPost=[
     body('text','The message is required.').trim().isLength({min: 1}).escape(),
-    body('user','The user name is required.').trim().isLength({min: 1}).escape(),
+    body('user','The user name is required.').trim().isLength({min: 1}).escape()new,
     (req,res,next)=>{
         //extract validaton errors from a request
         const errors = validationResult(req);
