@@ -9,3 +9,7 @@ block content
             label(for='user') User: 
             input(type="text", name="user")
         input(type="submit", name="",value="Submit Message")
+    if errors
+        ul
+            each error in errors 
+                li= error.msg

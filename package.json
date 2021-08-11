@@ -1,5 +1,7 @@
 {
-  "engines": { "node": "16.5.0" },
+  "engines": {
+    "node": "16.5.0"
+  },
   "name": "express-board-game",
   "version": "0.0.0",
   "private": true,
@@ -15,5 +17,8 @@
     "moment": "^2.29.1",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "express-validator": "^6.12.1"
   }
 }

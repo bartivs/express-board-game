@@ -1,4 +1,7 @@
 var Moment=require('moment');
+// user input validation 
+const { body,validationResult } = require('express-validator');
+
 
 const messages = [
     {
@@ -18,10 +21,27 @@ exports.boardMessagesGet= function(req, res, next) {
   }
 
 exports.boardMessageNewGet= function(req, res, next) {
-    res.render('new');
+    res.render('message_form');
 };
 
-exports.boardMessageNewPost=function(req,res,next){
-    messages.push({text: req.body.text, user: req.body.user, added: new Moment()});
-    res.redirect('/')
-};
+exports.boardMessageNewPost=[
+    body('text','The message is required.').trim().isLength({min: 1}).escape(),
+    body('user','The user name is required.').trim().isLength({min: 1}).escape(),
+    (req,res,next)=>{
+        //extract validaton errors from a request
+        const errors = validationResult(req);
+        if (!errors.isEmpty()){
+            //render de form with errors
+            res.render('message_form',{errors: errors.array()});
+        }
+        else{
+            //render the board
+            messages.push({text: req.body.text, user: req.body.user, added: new Moment()});
+            res.redirect('/');
+        }
+        
+    } 
+];
+
+
+
