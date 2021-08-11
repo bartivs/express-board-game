@@ -19,6 +19,9 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
-    "express-validator": "^6.12.1"
+    "compression": "^1.7.4",
+    "express-validator": "^6.12.1",
+    "helmet": "^4.6.0",
+    "mongoose": "^5.13.7"
   }
 }
